@@ -1,0 +1,30 @@
+<!-- Name: Abika -->
+<!-- Roll Number: BCS2025568 -->
+<!-- Assignment: 9 - Task 3 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Save Note</title>
+</head>
+<body>
+
+    <h2>My Notes</h2>
+
+    <input type="text" id="note" placeholder="Enter your note">
+
+    <button id="saveButton">Save</button>
+
+    <script>
+        const noteInput = document.getElementById("note");
+
+        noteInput.value = localStorage.getItem("note") || "";
+
+        document.getElementById("saveButton").addEventListener("click", function() {
+            localStorage.setItem("note", noteInput.value);
+            alert("Note saved!");
+        });
+    </script>
+
+</body>
+</html>
